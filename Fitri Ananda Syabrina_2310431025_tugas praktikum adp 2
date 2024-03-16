@@ -1,0 +1,169 @@
+A. PHYTHON
+
+print("Selamat Datang di PT. ANS Lintas Sumatera")
+print("PT kami menyediakan harga spesial dan terjamin fasilitasnya")
+print("------------------------------------------------------------------------------------")
+print("Bagi masyarakat yang tidak ingin kelewatan, silahkan lihat daftar harga dibawah ini")
+print("-----------------------------------------------------------------------------------")
+print("Bus ANS PT. Lintas Sumatera")
+print("Tujuan dan harga tiket keberangkatan:")
+print("1. Medan - Rp 350.000")
+print("2. Padang - Rp 100.000")
+print("3. Solok - Rp 75.000")
+print("4. Dharmasraya - Rp 85.000")
+print("5. Pekanbaru - Rp 150.000")
+print("6. Bengkulu - Rp 500.000")
+print("--------------------------------------------------------------------")
+
+pilihan_keberangkatan = int(input('tujuan yang dipilih (1-6): '))
+if pilihan_keberangkatan == 1:
+    tiket_keberangkatan = 350000
+elif pilihan_keberangkatan == 2:
+    tiket_keberangkatan = 100000
+elif pilihan_keberangkatan == 3:
+    tiket_keberangkatan = 75000
+elif pilihan_keberangkatan == 4:
+    tiket_keberangkatan = 85000
+elif pilihan_keberangkatan == 5:
+    tiket_keberangkatan = 150000
+elif pilihan_keberangkatan == 6:
+    tiket_keberangkatan = 500000
+else:
+    print("Tidak ada tujuan")
+
+print("---------------------------------------------------------------------------")
+print("----------------------------------------------------------------------------")
+print("Disini kami juga menyediakan kelas tambahan bagi yang berminat")
+print("Kelas (biaya tambahan ) Bus PT. ANS Lintas Sumatera :")
+print("1. Ekonomi Class - Rp 10.000")
+print("2. Bisnis Class - Rp 20.000")
+print("3. First Class - Rp 30.000")
+
+kelas_pilihan = int(input("Pilih_kelas (1-3): "))
+if kelas_pilihan == 1:
+    harga_pilihan = 10000
+elif kelas_pilihan == 2:
+    harga_pilihan = 20000
+elif kelas_pilihan == 3:
+    harga_pilihan = 30000
+else:
+    print("Tidak ada pilihan")
+
+print("-------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------")
+jumlah_tiket = int(input("Jumlah tiket: "))
+# Menghitung diskon
+diskon = 0
+if jumlah_tiket >= 5:
+    diskon = 0.1
+elif jumlah_tiket >= 3:
+    diskon = 0.05
+
+total_harga = tiket_keberangkatan + harga_pilihan
+diskon_harga = diskon * total_harga
+total_diskon = total_harga - diskon_harga
+
+print("Total: Rp", total_harga)
+print("Diskon: Rp", diskon_harga)
+print("Total setelah diskon: Rp", total_diskon)
+
+# Input Nama dan NIM
+nama = input("Nama:Fitri Ananda Syabrina")
+nim = input("NIM:23104310265")
+
+
+B. C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "--------------------------------------------------------" << endl;
+    cout << "Selamat Datang di PT. ANS Lintas Sumatera" << endl;
+    cout << "PT kami menyediakan harga spesial dan terjamin fasilitasnya" << endl;
+    cout << "--------------------------------------------------------" << endl;
+    cout << "Bagi masyarakat yang tidak ingin kelewatan, silahkan lihat daftar harga dibawah ini" << endl;
+    cout << "--------------------------------------------------------" << endl;
+    cout << "Bus ANS PT. Lintas Sumatera" << endl;
+    cout << "Tujuan dan harga tiket keberangkatan adalah : " << endl;
+    cout << "1. Medan - Rp 350.000 " << endl;
+    cout << "2. Padang - Rp 100.000 " << endl;
+    cout << "3. Solok - Rp 75.000 " << endl;
+    cout << "4. Dharmasraya - Rp 85.000 " << endl;
+    cout << "5. Pekanbaru - Rp 150.000 " << endl;
+    cout << "6. Bengkulu - Rp 500.000 " << endl;
+    cout << "---------------------------------------------------------" << endl;
+
+    int pilihan_keberangkatan;
+    cout << "Masukkan tujuan yang dipilih (1-6): ";
+    cin >> pilihan_keberangkatan;
+
+    int tiket_keberangkatan;
+    if (pilihan_keberangkatan == 1) {
+        tiket_keberangkatan = 350000;
+    } else if (pilihan_keberangkatan == 2) {
+        tiket_keberangkatan = 100000;
+    } else if (pilihan_keberangkatan == 3) {
+        tiket_keberangkatan = 75000;
+    } else if (pilihan_keberangkatan == 4) {
+        tiket_keberangkatan = 85000;
+    } else if (pilihan_keberangkatan == 5) {
+        tiket_keberangkatan = 150000;
+    } else if (pilihan_keberangkatan == 6) {
+        tiket_keberangkatan = 500000;
+    } else
+        cout << "Tidak ada tujuan" << endl;
+
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "---------------------------------------------------" << endl;
+    cout << "Disini kami juga menyediakan kelas tambahan bagi yang berminat" << endl;
+    cout << "Kelas (biaya tambahan) Bus PT. ANS Lintas Sumatera adalah : " << endl;
+    cout << "1. Ekonomi Class - Rp 10.000 " << endl;
+    cout << "2. Bisnis Class - Rp 20.000 " << endl;
+    cout << "3. First Class - Rp 30.000 " << endl;
+
+    int harga_pilihan;
+    int kelas_pilihan;
+    cout << "Masukkan pilih_kelas (1-3) : ";
+    cin >> kelas_pilihan;
+
+    if (kelas_pilihan == 1) {
+        harga_pilihan = 10000;
+    } else if (kelas_pilihan == 2){
+        harga_pilihan = 20000;
+    } else if (kelas_pilihan == 3){
+        harga_pilihan = 30000;
+        cout << "harga_pilihan = " << harga_pilihan << endl;
+    } else
+        cout << "Tidak ada pilihan" << endl;
+
+    cout << "----------------------------------------------" << endl;
+    cout << "----------------------------------------------" << endl;
+
+    int jumlah_tiket;
+    cout << "Masukkan Jumlah tiket : ";
+    cin >> jumlah_tiket;
+
+    // Menghitung diskon
+    float diskon = 0.0;
+    if (jumlah_tiket >= 5) {
+        diskon = 0.1;
+    } else if (jumlah_tiket >= 3){
+        diskon = 0.05;
+    }
+
+    int total_harga = (tiket_keberangkatan + harga_pilihan);
+    float diskon_harga = diskon * total_harga;
+    float total_diskon = total_harga - diskon_harga;
+
+    cout << "Total : Rp " << total_harga << endl;
+    cout << "Diskon : Rp " << diskon_harga << endl;
+    cout << "Total setelah diskon : Rp " << total_diskon << endl;
+
+    // input nama dan nim
+    string Nama, NIM;
+    cout << "Masukkan Nama = Fitri Ananda Syabrina ";
+    cout << "Masukkan NIM = 2310431025 ";
+
+}
