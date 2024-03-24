@@ -1,5 +1,5 @@
 n = 0
-while not (3 <= n <= 199 and (n < 100 or n > 109)):
+if not (3 <= n <= 199 and (n < 100 or n > 109)):
     n = int(input("Masukkan nilai n (3-199, bukan 100-109): "))
 f1 = 1
 f2 = 1
