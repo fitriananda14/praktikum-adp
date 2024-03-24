@@ -1,6 +1,8 @@
-n = 0
-if not (3 <= n <= 199 and (n < 100 or n > 109)):
-    n = int(input("Masukkan nilai n (3-199, bukan 100-109): "))
+n = int(input("Masukkan nilai n (3-199, selain 100-109): "))
+if not (3 <= n <= 199 and not (100 <= n <= 109)):
+    print("Nilai n tidak valid. Silakan masukkan nilai n (3-199, selain 100-109)")
+    n = int(input("Masukkan nilai n: "))
+
 f1 = 1
 f2 = 1
 sigma = f1 + f2 
@@ -8,8 +10,10 @@ i = 2
 while i < n:
     fn = f1 + f2
     sigma += fn
-    f1,f2 = f2,fn
+    f1, f2 = f2, fn
     i += 1
 
 print(f"Nilai fibonacci ke-{n} adalah {fn}")
 print(f"Total dari f1, f2, ..., fn adalah {sigma}")
+print("Nama = Fitri Ananda Syabrina ")
+print ("NIM = 2310431025 ")
