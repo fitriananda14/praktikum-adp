@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main(){
+    string Nama, NIM;
+    int a = 0,u = 0,e = 0,o = 0;
+    Nama = "Fitri Ananda Syabrina";
+    NIM = "2310431025";
+    cout << "===================================" << endl;
+    cout << "===================================" << endl;
+    cout << "Masukkan teks sebuah lirik lagu (3 kalimat): ";
+    //Menggunakan tipe data string untuk menyimpan lirik lagu
+    string lirik;
+    getline(cin, lirik);
+    for (int i = 0; i < lirik.size(); i++) {
+         if (lirik[i] == 'a') {
+            lirik[i] = 'i';
+            a++;
+        }else if (lirik[i] == 'u') {
+            lirik[i] = 'i';
+            u++;
+        }else if (lirik[i] == 'e') {
+            lirik[i] = 'i';
+            e++;
+        }else if (lirik[i] == 'o') {
+            lirik[i] = 'i';
+            o++;
+        }
+    }
+    //Menampilkan lirik lagu yang telah dimasukkan dengan perubahan
+    cout << "Teks lirik lagu setelah penggantian : " << lirik << endl;
+    cout << "=======================================" << endl;
+    cout << "=======================================" << endl;
+    cout << "Nama = " << Nama << endl;
+    cout << "NIM = " << NIM << endl ;
+    cout << endl;
+}
