@@ -1,0 +1,77 @@
+print ("Output 1 : ")
+print("================================================================================================================================================")
+print ("Nama = Fitri Ananda Syabrina")
+print ("Nim = 2310431025")
+print ("Shift = 2")
+
+n = ["Ani", "Sari", "Andi", "Lani", "Deby"]
+nilai_ujian = [
+    [90, 86, 78, 65, 80],
+    [76, 87, 85, 67, 91],
+    [88, 76, 65, 95, 100],
+    [82, 78, 65, 90, 77],
+    [54, 84, 76, 56, 90]
+]
+
+m = [
+    "Matematika Diskrit",
+    "Aljabar Linier Elementer",
+    "Kalkulus Dua",
+    "Geometri Analitik",
+    "Algoritma dan Pemrograman"
+]
+
+print("================================================================================================================================================")
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Nilai Ujian Mahasiswa Universitas Andalas <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+print("================================================================================================================================================")
+
+print("| No | Nama Mahasiswa |", end="")
+for nama_mata_kuliah in m:
+    print(f" {nama_mata_kuliah:>19} |", end="")
+print()
+
+print("================================================================================================================================================")
+
+for i in range(len(n)):
+    print(f"| {i+1:<2} | {n[i]:<15} |", end="")
+    for nilai in nilai_ujian[i]:
+        print(f" {nilai:>21} |", end="")
+    print()
+print ("================================================================================================================================================")
+
+
+
+
+
+print("Output 2 : ")
+print("================================================================================================================================================")
+rata2_nilai_ujian = []
+for i in range(len(nilai_ujian)):
+    jumlah = sum(nilai_ujian[i])
+    rata2_nilai_ujian.append(jumlah / len(nilai_ujian[i]))
+print("Nama Mahasiswa         |    Rata-rata Nilai Ujian   |  ")
+print("=" * 53) 
+for i in range(len(n)):
+    print(f"{n[i]:<22} |    {rata2_nilai_ujian[i] :>22}  |")
+print ("===============================================================================================================================================")
+
+
+
+
+print("Output 3 : ")
+print("================================================================================================================================================")
+maks = rata2_nilai_ujian[0]  
+min = rata2_nilai_ujian[0]   
+indeks_maks = 0  
+indeks_min = 0   
+
+for i in range(len(rata2_nilai_ujian)):  
+    if (maks < rata2_nilai_ujian[i]):
+        maks = rata2_nilai_ujian[i]
+        indeks_maks = i
+    if (min > rata2_nilai_ujian[i]):
+        min = rata2_nilai_ujian[i]
+        indeks_min = i
+
+print("Nilai maksimum:", maks,",", "pada indeks ke:", indeks_maks, ",", "atas nama :",  n[indeks_maks])
+print("Nilai minimum:", min, ",", "pada indeks ke:", indeks_min, ",", "atas nama :",  n[indeks_min])
