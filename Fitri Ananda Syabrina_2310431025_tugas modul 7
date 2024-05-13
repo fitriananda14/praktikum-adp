@@ -1,0 +1,75 @@
+print("Nama : Fitri Ananda Syabrina")
+print("NIM : 2310431025")
+print("Shift : 2")
+print("Tugas modul 7 : Konversi suhu")
+print("---------------------------------------------------------------------")
+
+def konversi_suhu(suhu, satuan):
+    if satuan == "C":
+        if suhu < -273.15:
+            print("Suhu yang Anda inputkan tidak sesuai")
+            return None
+        else:
+            suhu_reaumur = suhu * 4/5
+            suhu_fahrenheit = (suhu * 9/5) + 32
+            suhu_kelvin = suhu + 273.15
+            return suhu_reaumur, suhu_fahrenheit, suhu_kelvin
+    elif satuan == "F":
+        if suhu < -459.67:
+            print("Suhu yang Anda inputkan tidak sesuai")
+            return None
+        else:
+            suhu_celsius = (suhu - 32) * 5/9
+            suhu_kelvin = ((suhu - 32) * 5/9) + 273.15
+            suhu_reaumur = (suhu-32) * 4/9
+            return suhu_celsius, suhu_kelvin, suhu_reaumur
+    elif satuan == "R":
+        if suhu < -218.52:
+            print("Suhu yang Anda inputkan tidak sesuai")
+            return None
+        else:
+            suhu_celsius = suhu * 5/4
+            suhu_kelvin = (suhu * 5/4) + 273.15
+            suhu_fahrenheit = (suhu * 9/4) + 32
+            return suhu_celsius, suhu_kelvin, suhu_fahrenheit
+    elif satuan == "K":
+        if suhu < 0:
+            print("Suhu yang Anda inputkan tidak sesuai")
+            return None
+        else:
+            suhu_celsius = suhu - 273.15
+            suhu_reaumur = (suhu-273.15) * 4/5
+            suhu_fahrenheit = ((suhu-273.15) * 9/5) + 32
+            return suhu_celsius, suhu_reaumur, suhu_fahrenheit
+
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Tabel Konversi Suhu<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+print("========================================================================================")
+
+suhu = float(input("Masukkan suhu: "))
+satuan = input("Masukkan satuan suhu (C/F/R/K): ")
+
+print("Suhu", suhu, "derajat", satuan, "dapat dikonversi menjadi:")
+hasil_konversi = konversi_suhu(suhu, satuan)
+
+if hasil_konversi:
+    print(" |  Satuan suhu  |          Suhu            |")
+    print("========================================================================================")
+    if satuan == "C":
+        print(f"| Reaumur       | {hasil_konversi[0]:21.2f}  |")
+        print(f"| Fahrenheit    | {hasil_konversi[1]:21.2f}  |")
+        print(f"| Kelvin        | {hasil_konversi[2]:21.2f}  |")
+    elif satuan == "F":
+        print(f"| Celsius       | {hasil_konversi[0]:21.2f}  |")
+        print(f"| Kelvin        | {hasil_konversi[1]:21.2f}  |")
+        print(f"| Reaumur       | {hasil_konversi[2]:21.2f}  |")
+    elif satuan == "R":
+        print(f"| Celsius       | {hasil_konversi[0]:21.2f}  |")
+        print(f"| Kelvin        | {hasil_konversi[1]:21.2f}  |")
+        print(f"| Fahrenheit    | {hasil_konversi[2]:21.2f}  |")
+    elif satuan == "K":
+        print(f"| Celsius       | {hasil_konversi[0]:21.2f}  |")
+        print(f"| Reaumur       | {hasil_konversi[1]:21.2f}  |")
+        print(f"| Fahrenheit    | {hasil_konversi[2]:21.2f}  |")
+    print("========================================================================================")
+else:
+    print("Suhu yang Anda inputkan tidak dapat dikonversi")
