@@ -1,0 +1,63 @@
+print("Nama : Fitri Ananda Syabrina")
+print("NIM : 2310431025")
+print("Shift : 2")
+print("Tugas : Modul 8")
+print("==============================================================================")
+print("******************************************************************************")
+
+def data_buku():
+    with open("data_buku.txt","w") as file:
+        file.write(f"{judul},{nama_penulis},{nama_penerbit},{tahun_terbit}\n")
+    print("data telah ditulis")
+
+def tambah_data_buku():
+    judul = input("Masukkan judul buku: ")
+    nama_penulis = input("Masukkan nama penulis: ")
+    nama_penerbit = input("Masukkan nama penerbit: ")
+    tahun_terbit = input("Masukkan tahun terbit: ")
+    
+    with open("data_buku.txt","a") as file:
+        file.write(f"{judul},{nama_penulis},{nama_penerbit},{tahun_terbit}\n")
+    print("data telah ditambah")
+
+def hapus_data_buku(nama_penulis):
+    with open("data_buku.txt","r") as file:
+        lines = file.readlines()
+    with open("data_buku.txt","w") as file:
+        for line in lines:
+            if line.split(",")[1]!= nama_penulis:
+                file.write(line)    
+    print("data telah dihapus")
+
+def tampilkan_data_buku():
+    with open("data_buku.txt", "r") as file:
+        data_buku = file.readlines()
+    if data_buku:
+        print("Data Buku: ")
+        for line in data_buku:
+            print(line.strip())
+    else:
+        print("Data Buku yang ingin anda baca kosong")
+    print("==============================================================================")
+
+while True:
+    print(">>>>>>>>>>>>>>>>>>>>>>>   Pilihan Menu   <<<<<<<<<<<<<<<<<<")
+    print("1. Menyimpan data buku")
+    print("2. Menghapus data buku")
+    print("3. Menampilkan data buku")
+    print("4. Keluar")
+
+    pilih = input("Pilihan menu (1/2/3/4): ")
+
+    if pilih == "1":
+        tambah_data_buku()
+    elif pilih == "2":
+        nama_penulis = input("Masukkan nama penulis yang ingin dihapus: ")
+        hapus_data_buku(nama_penulis)
+    elif pilih == "3":
+        tampilkan_data_buku()
+    elif pilih == "4":
+        print("Terima kasih, sampai jumpa!")
+        break
+    else:
+        print("Pilihan tidak valid")
