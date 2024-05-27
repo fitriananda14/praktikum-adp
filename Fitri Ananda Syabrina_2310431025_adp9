@@ -1,0 +1,51 @@
+import os
+from termcolor import cprint
+
+os.system('cls')
+
+print("Nama : Fitri Ananda Syabrina")
+print("NIM : 2310431025")
+print("shift : 2")
+print("Tugas modul : 9")
+print("==================================================================")
+
+teks_visa = [
+    "     VVVVV    VVVVV          III        SSS                 AA            ",
+    "     VVVV    VVVV          III      SS    SS             A  A           ",
+    "     VVV    VVV          III       SS                 A    A          ",
+    "     VV    VV          III           SS            AAAAAAAA         ",
+    "     VV  VV          III             SS         A        A        ",
+    "     VVVV          III       SS     SS       A          A       ",
+    "     VV         III           SSSS        A            A      ",
+]
+
+lebar_kolom_total = 75
+
+for _ in range(5):
+    cprint(" " * 75, 'white', 'on_blue')
+    print(end="")
+cprint(" " * 75, 'blue' , 'on_white')
+print(end="")
+
+for line in teks_visa:
+    spasi_kiri = (lebar_kolom_total - len(line)) // 2
+    cprint(" " * spasi_kiri, 'blue', 'on_white', end="")
+    for char in line:
+        if char != ' ':
+            cprint(" ", 'blue', 'on_blue', end="")
+        else:
+            cprint(" ", 'blue', 'on_white', end="")
+    
+    spasi_kanan = lebar_kolom_total - spasi_kiri - len(line)
+    cprint(" " * spasi_kanan, 'blue', 'on_white')
+    print(end="")
+cprint(" " * 75, 'blue' , 'on_white')
+print(end="")
+
+for _ in range(7 - len(teks_visa)):
+    cprint(" " * 75, 'blue', 'on_white')
+    cprint(end="")
+
+for _ in range(5):
+    cprint(" " * 75, 'white', 'on_yellow')
+    print(end="")
